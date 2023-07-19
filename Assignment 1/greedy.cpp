@@ -41,7 +41,7 @@ int main(){
     			ans.push_back({itt.first,itt.second});
     			quantity.push_back(taken);
     			mm=0;
-    			break;
+    			
     		}
     	}
     }
