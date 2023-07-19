@@ -4,14 +4,14 @@ int main(){
     cout << "Please enter the totol number of items : ";
     int n;
     cin>>n;
-    cout << "Please enter the profit of each item :" << endl;
+    cout << "Please enter the profit of all the items :" << endl;
     vector<double>profit,weight;
     map<pair<int,int>,int>items;
     for(int i=0;i<n;i++){
         int a; cin>>a;
         profit.push_back(a);
     } 
-    cout << "Please the cost of each item :" << endl;
+    cout << "Please the cost of all the items :" << endl;
     for(int i=0;i<n;i++){
         double a;
         cin>>a;
@@ -41,19 +41,21 @@ int main(){
     			ans.push_back({itt.first,itt.second});
     			quantity.push_back(taken);
     			mm=0;
-    			
+    			break;
     		}
     	}
     }
     double profitt=0;
+    double weighttt=0;
     for(int i=0;i<ans.size();i++){
     	profitt+= (ans[i].first*quantity[i]);
+    	weighttt += (ans[i].second*quantity[i]);
     }
     cout << "Items taken and Quantity" << endl;
     for(int i=0;i<ans.size();i++){
     	cout << items[ans[i]] << "  " << quantity[i] << endl;
     }
     cout << endl;
-    cout << "Profit is :";
-    cout << profitt << endl;
+    cout << "Profit is : " << profitt << endl;
+    cout << "Weight is : " << weighttt << endl;
 }
